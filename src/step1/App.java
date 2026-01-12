@@ -28,7 +28,7 @@ public class App {
 
             if(symbol=='%'&&num2==0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-//                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용.
+//                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용. while을 벗어나지는 못한다.
                 continue;
             }
 
