@@ -15,12 +15,12 @@ public class App {
             System.out.println("두 번째 숫자를 입력하세요: ");
             int num2 = sc.nextInt();
 
-//            남아있던 \n을 읽기때문
+//            남아있던 \n을 읽기때문. \n을 처리하기 위해 사용.
             sc.nextLine();
 
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
-//            과제 예시
+//            과제 가이드 예시 활용.
             char symbol = sc.next().charAt(0);
             sc.nextLine();
 
@@ -33,7 +33,7 @@ public class App {
 
             if(symbol=='%'&&num2==0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-//                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용. while 을 벗어나지는 못한다.
+//                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용. while문 안에 있기때문에 반복문을 벗어나지는 못한다.
                 continue;
             }
 
