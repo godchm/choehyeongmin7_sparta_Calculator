@@ -50,17 +50,5 @@ public class Calculator {
     }
 }
 
-//    result.add(sum);
-//    return result;
 
-
-
-    // Getter 메서드 구현
-
-    // Setter 메서드 구현
-
-    // 연산 결과들 중 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드를 구현
-//    public void removeResult(){
-//
-//    }
 
