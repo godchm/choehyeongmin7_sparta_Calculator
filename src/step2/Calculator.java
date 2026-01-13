@@ -34,11 +34,14 @@ public class Calculator {
         return sum;
 
     }
+
+    // 게터
     public ArrayList<Integer>getSums(){
     return result;
 
     }
 
+    // 세터
     public void setSums(int num3){
         // 컬렉션 요소에 하나의 값을 추가
         this.result.add(num3);

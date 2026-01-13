@@ -1,6 +1,6 @@
 package step3;
 
-import step2.Calculator;
+import step3.Calculator;
 
 import java.util.Scanner;
 
@@ -8,15 +8,15 @@ public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        step2.Calculator calculator1 = new Calculator();
+        Calculator calculator1 = new Calculator();
 
 
         while (true) {
 
             System.out.println("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
+            double num1 = sc.nextDouble();
             System.out.println("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            double num2 = sc.nextDouble();
 
 //            남아있던 \n을 읽기때문. \n을 처리하기 위해 사용.
             sc.nextLine();
