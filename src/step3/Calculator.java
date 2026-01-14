@@ -7,14 +7,14 @@ public class Calculator {
 
     //    컬렉션 선언
     private ArrayList<Integer> result = new ArrayList<>();
-    GenericBox<Integer> intDouble=new GenericBox<>(0);
+    GenericBox<Integer> intNumber=new GenericBox<>(0);
 
 //    public int calculator(int num1, int num2, char symbol)
       public<S extends Number> int calculator(S num1, S num2, char symbol) {
 
           // 변환
-                 int a=intDouble.GenericBoxInt(num1);
-                 int b=intDouble.GenericBoxInt(num2);
+                 int a=intNumber.GenericBoxInt(num1);
+                 int b=intNumber.GenericBoxInt(num2);
           int sum=0;
 
 
