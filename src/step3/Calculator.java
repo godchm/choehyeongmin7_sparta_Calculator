@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-
     //    컬렉션 선언
     private ArrayList<Double> result = new ArrayList<>();
     GenericBox<Double> intNumber=new GenericBox<>(0.0);

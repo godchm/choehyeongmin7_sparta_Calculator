@@ -20,14 +20,12 @@ public class App {
 
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
-//            과제 가이드 예시 활용.
-//            char symbol = sc.next().charAt(0);
-//            sc.nextLine();
 
 
 //            사칙연산 처리 main에서 한다. 예외처리
             char symbol;
             while (true){
+//                            과제 가이드 예시 활용.
                 symbol = sc.next().charAt(0);
                 sc.nextLine();
                 if (symbol == '+' || symbol == '-' || symbol == 'x' || symbol == '%') {
@@ -36,7 +34,6 @@ public class App {
                     System.out.println("올바른 사칙연산자를 입력하세요.");
                 }
             }
-
             if(symbol=='%'&&num2==0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
 //                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용. while문 안에 있기때문에 반복문을 벗어나지는 못한다.

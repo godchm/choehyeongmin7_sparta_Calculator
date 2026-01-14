@@ -7,7 +7,6 @@ public class App {
         Scanner sc=new Scanner(System.in);
         String answer1;
 
-
         while (true) {
 
             System.out.println("첫 번째 숫자를 입력하세요: ");

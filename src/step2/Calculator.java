@@ -8,7 +8,6 @@ public class Calculator {
 //    컬렉션 선언
     private ArrayList<Integer> result = new ArrayList<>();
 
-
     public int calculator(int num1, int num2, char symbol) {
         int sum=0;
 

@@ -1,11 +1,10 @@
 package step3;
 
-import step3.Calculator;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.Function;
+
 
 public class App {
     // 타입 변환 int/double 형태로 구분해서 결과를 출력하기 위해
@@ -24,7 +23,6 @@ public class App {
         String answer1, answer2;
         List<Integer> arrayList =new ArrayList<>();
 
-
         while (true) {
 
             System.out.println("첫 번째 숫자를 입력하세요: ");
@@ -32,17 +30,13 @@ public class App {
             System.out.println("두 번째 숫자를 입력하세요: ");
             String num2 = sc.nextLine();
 
-
-
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
-//            과제 가이드 예시 활용.
-//            char symbol = sc.next().charAt(0);
-//            sc.nextLine();
 
             char symbol;
 //            사칙연산 처리 main에서 한다.
             while (true){
+//                            과제 가이드 예시 활용.
                 symbol = sc.next().charAt(0);
                 sc.nextLine();
             if (symbol == '+' || symbol == '-' || symbol == 'x' || symbol == '%') {
@@ -127,7 +121,6 @@ public class App {
         double num5 = sc.nextDouble();
         calculator1.setSums(num5);
 
-
 //        구글링을 통해서 orElseThrow(); 추가. 논리적으로 빈 컬렉션이 오지 않는다는것을 자바는 모른다. 따라서 써준다.
 //        람다 메서드와 스트림 활용... 어렵다...
         double max =calculator1.getSums()
@@ -136,7 +129,6 @@ public class App {
                              .orElseThrow();
 
         System.out.println("최대값은 :"+max);
-
 
 }
 }
