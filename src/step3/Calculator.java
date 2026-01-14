@@ -41,6 +41,7 @@ public class Calculator {
         return sum;
 
     }
+
     public ArrayList<Integer>getSums(){
         return result;
 

@@ -2,21 +2,26 @@ package step3;
 
 import step3.Calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class App {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
         Calculator calculator1 = new Calculator();
-        String answer1;
+        String answer1, answer2;
+        List<Integer> arrayList =new ArrayList<>();
+
 
         while (true) {
 
             System.out.println("첫 번째 숫자를 입력하세요: ");
-            double num1 = sc.nextDouble();
+            int num1 = sc.nextInt();
             System.out.println("두 번째 숫자를 입력하세요: ");
-            double num2 = sc.nextDouble();
+            int num2 = sc.nextInt();
 
 //            남아있던 \n을 읽기때문. \n을 처리하기 위해 사용.
             sc.nextLine();
@@ -71,15 +76,43 @@ public class App {
             sc.nextLine();
             calculator1.setSums(num3);
         }
-
-        System.out.println("첫번째 값을 삭제하겠습니까?(yes/no) ");
-        String answer2 = sc.nextLine();
-        if (answer2.equals("yes")) {
+        while (true) {
+            System.out.println("첫번째 값을 삭제하겠습니까?(yes/no) ");
+             answer2 = sc.nextLine();
+            if (answer2.equals("yes") || answer2.equals("no")) {
+                break;
+            }else{
+                System.out.println("yes / no 중에서 입력하세요.");
+            }
+        }
+        if (answer2.equals("yes")){
             calculator1.removeResult();
         }
 
         calculator1.getSums();
         System.out.println("결과값 :" + calculator1.getSums());
 
-    }
+//        System.out.println("값 입력");
+//        double num4 = sc.nextDouble();
+//        sc.nextLine();
+//        int num5=intDouble.GenericBoxInt(num4);
+//        calculator1.setSums(num5);
+
+
+//        구글링을 통해서 orElseThrow(); 추가. 논리적으로 빈 컬렉션이 오지 않는다는것을 자바는 모른다. 따라서 써준다.
+        int max =calculator1.getSums()
+                             .stream()
+                             .max((num1,num2)->num1.compareTo(num2))
+                             .orElseThrow();
+
+
+
+        System.out.println("최대값은 :"+max);
+
+
+
+
+
+
+}
 }
