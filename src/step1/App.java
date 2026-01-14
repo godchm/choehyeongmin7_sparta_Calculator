@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        String answer1;
 
 
         while (true) {
@@ -49,13 +50,24 @@ public class App {
                         System.out.println("올바른 사직연산자를 입력하시오..");
                 }
 
-                System.out.println("더 계산하시겠습니까? (yes/exit)  (exit 입력 시 종료)");
-                String answer = sc.nextLine();
-
-                if(answer.equals("exit")){
-                    System.out.println("계산기 종료");
+            while (true) {
+                System.out.println("더 계산하시겠습니까? (yes/exit) (exit 입력 시 종료)");
+                answer1 = sc.nextLine();
+                if (answer1.equals("yes") || answer1.equals("exit"))
+                {
                     break;
+                } else {
+                    System.out.println("yes / exit 중에서 입력하세요.");
                 }
+            }
+            if (answer1.equals("yes")) {
+                continue;
+            }
+
+            if(answer1.equals("exit")){
+                System.out.println("계산기 종료");
+                break;
+            }
             }
         sc.close();
         }

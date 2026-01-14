@@ -8,6 +8,15 @@ import java.util.Scanner;
 import java.util.function.Function;
 
 public class App {
+    // 타입 변환 int/double 형태로 구분해서 결과를 출력하기 위해
+    private static Number Convert(String num){
+        if(num.contains(".")){
+            return Double.parseDouble(num);
+        }else {
+            return Integer.parseInt(num);
+        }
+
+    }
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -19,33 +28,43 @@ public class App {
         while (true) {
 
             System.out.println("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
+            String num1 = sc.nextLine();
             System.out.println("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            String num2 = sc.nextLine();
 
-//            남아있던 \n을 읽기때문. \n을 처리하기 위해 사용.
-            sc.nextLine();
+
 
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
 //            과제 가이드 예시 활용.
-            char symbol = sc.next().charAt(0);
-            sc.nextLine();
+//            char symbol = sc.next().charAt(0);
+//            sc.nextLine();
 
+            char symbol;
 //            사칙연산 처리 main에서 한다.
-            if (symbol != '+' && symbol != '-' && symbol != 'x' && symbol != '%') {
+            while (true){
+                symbol = sc.next().charAt(0);
+                sc.nextLine();
+            if (symbol == '+' || symbol == '-' || symbol == 'x' || symbol == '%') {
+
+                break;
+            }else{
                 System.out.println("올바른 사칙연산자를 입력하세요.");
-                System.out.println("\n");
-                continue;
+                }
             }
 
-            if (symbol == '%' && num2 == 0) {
+            // 변환
+            Number num3 =Convert(num1);
+            Number num4=Convert(num2);
+
+//            num4를 double 형으로 변환해주는 메서드 사용.
+            if (symbol=='%' &&  num4.doubleValue()== 0.0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
 //                다시 입력하라고 해야함. 따라서 건너뛰는 continue를 사용. while문 안에 있기때문에 반복문을 벗어나지는 못한다.
                 continue;
             }
 
-            int result = calculator1.calculator(num1, num2, symbol);
+            double result = calculator1.calculator(num3, num4, symbol);
 
             System.out.println("결과 :" + result);
 
@@ -102,22 +121,21 @@ public class App {
 
         calculator1.getSums();
         System.out.println("결과값 :" + calculator1.getSums());
+        System.out.println();
 
-//        System.out.println("값 입력");
-//        double num4 = sc.nextDouble();
-//        sc.nextLine();
-//        int num5=intDouble.GenericBoxInt(num4);
-//        calculator1.setSums(num5);
+        System.out.println("값 입력");
+        double num5 = sc.nextDouble();
+        calculator1.setSums(num5);
 
 
 //        구글링을 통해서 orElseThrow(); 추가. 논리적으로 빈 컬렉션이 오지 않는다는것을 자바는 모른다. 따라서 써준다.
-        int max =calculator1.getSums()
+//        람다 메서드와 스트림 활용... 어렵다...
+        double max =calculator1.getSums()
                              .stream()
                              .max((num1,num2)->num1.compareTo(num2))
                              .orElseThrow();
 
         System.out.println("최대값은 :"+max);
-
 
 
 }

@@ -6,16 +6,16 @@ public class Calculator {
 
 
     //    컬렉션 선언
-    private ArrayList<Integer> result = new ArrayList<>();
-    GenericBox<Integer> intNumber=new GenericBox<>(0);
+    private ArrayList<Double> result = new ArrayList<>();
+    GenericBox<Double> intNumber=new GenericBox<>(0.0);
 
 //    public int calculator(int num1, int num2, char symbol)
-      public<S extends Number> int calculator(S num1, S num2, char symbol) {
+      public<S extends Number> double calculator(S num1, S num2, char symbol) {
 
           // 변환
-                 int a=intNumber.GenericBoxInt(num1);
-                 int b=intNumber.GenericBoxInt(num2);
-          int sum=0;
+                 double a=intNumber.GenericBoxDouble(num1);
+                 double b=intNumber.GenericBoxDouble(num2);
+          double sum=0;
 
 
         OperatorType operatorType=OperatorType.Symbol(symbol);
@@ -42,12 +42,12 @@ public class Calculator {
 
     }
 
-    public ArrayList<Integer>getSums(){
+    public ArrayList<Double>getSums(){
         return result;
 
     }
 
-    public void setSums(int num3){
+    public void setSums(double num3){
         // 컬렉션 요소에 하나의 값을 추가
         this.result.add(num3);
 
@@ -69,9 +69,9 @@ public class Calculator {
         }
 
         // 제네릭 메서드 타입 변환을 위하여 만듬. S눈 반드시 Number 이거나 Number을 상속한 타입만 올수 있다.
-        public <S extends Number> int GenericBoxInt(S num1){
+        public <S extends Number> double GenericBoxDouble(S num1){
             //  Number 클래스에 정의된 메서드로 int로 변환해준다.
-            return num1.intValue();
+            return num1.doubleValue();
         }
 
     }
