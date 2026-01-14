@@ -47,7 +47,7 @@ public class App {
                 }
             }
 
-            // 변환
+            //   변환
             Number num3 =Convert(num1);
             Number num4=Convert(num2);
 
