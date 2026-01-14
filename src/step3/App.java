@@ -9,7 +9,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         Calculator calculator1 = new Calculator();
-
+        String answer1;
 
         while (true) {
 
@@ -53,8 +53,18 @@ public class App {
             }
 
         }
-        System.out.println("세터로 값을 추가?(yes/no)");
-        String answer1 = sc.nextLine();
+
+//        예외 처리
+        while (true) {
+            System.out.println("세터로 값을 추가?(yes/no)");
+            answer1 = sc.nextLine();
+            if (answer1.equals("yes") || answer1.equals("no"))
+            {
+            break;
+            } else {
+                System.out.println("yes / no 중에서 입력하세요.");
+            }
+        }
         if (answer1.equals("yes")) {
             System.out.println("저장할 정수를 입력(세터 추가): ");
             int num3 = sc.nextInt();
