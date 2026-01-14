@@ -21,14 +21,20 @@ public class App {
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
 //            과제 가이드 예시 활용.
-            char symbol = sc.next().charAt(0);
-            sc.nextLine();
+//            char symbol = sc.next().charAt(0);
+//            sc.nextLine();
 
-//            사칙연산 처리 main에서 한다.
-            if (symbol != '+' && symbol != '-' && symbol != 'x' && symbol != '%') {
-                System.out.println("올바른 사칙연산자를 입력하세요.");
-                System.out.println("\n");
-                continue;
+
+//            사칙연산 처리 main에서 한다. 예외처리
+            char symbol;
+            while (true){
+                symbol = sc.next().charAt(0);
+                sc.nextLine();
+                if (symbol == '+' || symbol == '-' || symbol == 'x' || symbol == '%') {
+                    break;
+                }else{
+                    System.out.println("올바른 사칙연산자를 입력하세요.");
+                }
             }
 
             if(symbol=='%'&&num2==0) {
@@ -61,7 +67,6 @@ public class App {
             }
 
         }
-
 
         while (true) {
             System.out.println("세터로 값을 추가?(yes/no)");

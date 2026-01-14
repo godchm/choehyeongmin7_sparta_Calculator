@@ -21,11 +21,20 @@ public class App {
 
 //           +, -, x, %
             System.out.println("사칙연산 기호를 입력하세요: (+, -, x, %)");
-            char symbol=sc.next().charAt(0);
 
-//            입력받는 자료형이 정수-> 문자열로 바뀌므로 사용한다.
-//            남아있던 \n을 읽기때문
-            sc.nextLine();
+//            예외 처리
+            char symbol;
+            while (true){
+                symbol = sc.next().charAt(0);
+                sc.nextLine();
+                if (symbol == '+' || symbol == '-' || symbol == 'x' || symbol == '%') {
+                    break;
+                }else{
+                    System.out.println("올바른 사칙연산자를 입력하세요.");
+                }
+            }
+
+
 
             if(symbol=='%'&&num2==0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
