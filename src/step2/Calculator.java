@@ -46,7 +46,7 @@ public class Calculator {
         this.result.add(num3);
 
     }
-
+//    첫번째 값 제거 기능
     public void removeResult(){
         result.remove(0);
     }
