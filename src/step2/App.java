@@ -7,13 +7,24 @@ public class App {
         Scanner sc=new Scanner(System.in);
         Calculator calculator1=new Calculator();
         String answer1;
+        int num1, num2;
 
         while (true) {
 
-            System.out.println("첫 번째 숫자를 입력하세요: ");
-            int num1 = sc.nextInt();
-            System.out.println("두 번째 숫자를 입력하세요: ");
-            int num2 = sc.nextInt();
+            // 양의 정수만 받는 예외처리
+            while(true) {
+                System.out.println("첫 번째 숫자를 입력하세요: ");
+                num1 = sc.nextInt();
+                System.out.println("두 번째 숫자를 입력하세요: ");
+                num2 = sc.nextInt();
+                if (num1 >= 0 && num2 >= 0) {
+                    break;
+                } else {
+                    System.out.println("양의 정수로 입력해주세요.");
+                    System.out.println();
+                }
+            }
+
 
 //            남아있던 \n을 읽기때문. \n을 처리하기 위해 사용.
             sc.nextLine();
