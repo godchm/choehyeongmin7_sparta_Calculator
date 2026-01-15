@@ -11,7 +11,7 @@ public class Calculator {
 //    public int calculator(int num1, int num2, char symbol)
       public<S extends Number> double calculator(S num1, S num2, char symbol) {
 
-          // 변환
+          // 변환을 위해서 사용.
                  double a=intNumber.GenericBoxDouble(num1);
                  double b=intNumber.GenericBoxDouble(num2);
           double sum=0;
@@ -68,8 +68,9 @@ public class Calculator {
         }
 
         // 제네릭 메서드 타입 변환을 위하여 만듬. S눈 반드시 Number 이거나 Number을 상속한 타입만 올수 있다.
+        // 아직 나한테 실제 사용은 어렵다... 솔직히 구글링해서 조금이나마 이해하고 인용햤다.
         public <S extends Number> double GenericBoxDouble(S num1){
-            //  Number 클래스에 정의된 메서드로 int로 변환해준다.
+            //  Number 클래스에 정의된 메서드로 double로 변환해준다.
             return num1.doubleValue();
         }
 
